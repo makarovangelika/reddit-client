@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Subreddit />} />
         <Route path='/:subreddit' element={<Subreddit />} />
-        <Route path='/post/:postId' element={<Post />} />
+        <Route path='/:subreddit/:postId' element={<Post />} />
       </Routes>
     </div>
   );
