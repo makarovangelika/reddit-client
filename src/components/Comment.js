@@ -8,7 +8,7 @@ export function Comment({ comment }) {
             <p>{comment.body}</p>
             {comment.replies &&
                 comment.replies.data.children.map(reply => {
-                    return <Comment comment={reply.data} />
+                    return <Comment key={reply.id} comment={reply.data} />
                 })}
         </div>
     )
