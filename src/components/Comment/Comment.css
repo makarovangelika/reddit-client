@@ -1,0 +1,21 @@
+.comment {
+    border-left: 2px solid #d3d5d8;
+    padding-left: 10px;
+    margin-bottom: 22px;
+}
+.comment .comment {
+    margin-left: 14px;
+}
+.comment-author {
+    font-weight: 700;
+    font-size: .85rem;
+    display: inline;
+    margin-right: 5px;
+}
+p {
+    margin-top: 5px;
+}
+.comment a {
+    color: rgb(0, 102, 204);
+    text-decoration: underline;
+}

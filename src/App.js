@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Subreddit } from './components/Subreddit/Subreddit';
-import { Post } from './components/Post';
+import { Post } from './components/Post/Post';
 
 function App() {
   return (

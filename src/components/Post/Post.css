@@ -1,0 +1,21 @@
+.post-card {
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 15px;
+}
+.comments-list {
+    padding: 0 8px;
+    margin-top: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+    .comments-list {
+        padding: 0 15px;
+    }
+    .post-card {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .post-card {
+        border-radius: 5px;
+    }
+}
