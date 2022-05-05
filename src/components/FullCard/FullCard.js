@@ -26,7 +26,7 @@ export function FullCard ({ post }) {
                 <h1 className='post-title'>{post.title}</h1>
                 {post.is_self ? <MarkdownText body={post.selftext} /> : content}
             </div>
-            <div className='post-panel'>
+            <div className='post-panel' id='comments'>
                 <span className='score'>{post.score}</span>
                 <div className='comments-link'>
                     <img src='/comments-icon.png' alt='comments icon' />

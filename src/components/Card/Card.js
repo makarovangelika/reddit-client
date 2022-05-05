@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import './Card.css';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export function Card({ post, showSubreddit }) {
     let content;
@@ -28,7 +28,7 @@ export function Card({ post, showSubreddit }) {
             </div>
             <div className='post-panel'>
                 <span className='score'>{post.score}</span>
-                <Link className='comments-link' to={`/${post.subreddit}/${post.id}`}>
+                <Link className='comments-link' to={`/${post.subreddit}/${post.id}#comments`}>
                     <img src='/comments-icon.png' alt='comments icon' />
                     <span>{post.num_comments} {post.num_comments === 1 ? 'comment' : 'comments'}</span>
                 </Link>
