@@ -19,3 +19,6 @@ p {
     color: rgb(0, 102, 204);
     text-decoration: underline;
 }
+.comment a:hover {
+    text-decoration: none;
+}

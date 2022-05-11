@@ -65,7 +65,7 @@ span {
 .thumbnail-post {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
 .thumbnail-post img {
     margin-left: 20px;

@@ -11,10 +11,11 @@ export function Post() {
     let [post, setPost] = useState({});
     let [comments, setComments] = useState([]);
     let [isLoading, setIsLoading] = useState(true);
+    let [error, setError] = useState(false);
 
     useEffect(() => {
-        fetchPost(postId).
-            then(response => {
+        fetchPost(postId)
+            .then(response => {
                 setPost(response[0].data.children[0].data);
                 setComments(response[1].data.children.map(comment => {
                     if (comment.kind !== 'more') {
@@ -23,19 +24,23 @@ export function Post() {
                 }));
                 setIsLoading(false);
             })
-    }, [postId]);
+            .catch(() => {
+                setError(true);
+            })
+    }, [postId, error]);
 
     return (
-        isLoading ?
-            <span>Loading...</span> :
-            <div className='post-card'>
-                <FullCard post={post} />
-                <div className='comments-list'>
-                    {comments.map(comment => {
-                        if (comment)
-                        return <Comment key={comment.id} comment={comment} />
-                    })}
+        error ? <p className='error'>Cannot load the post. Try to check your internet connection or change the url and reload the page.</p> :
+            (isLoading ? <span className='loading'>Loading...</span> :
+                <div className='post-card'>
+                    <FullCard post={post} />
+                    <div className='comments-list'>
+                        {comments.map(comment => {
+                            if (comment)
+                            return <Comment key={comment.id} comment={comment} />
+                        })}
+                    </div>
                 </div>
-            </div>
+            )
     )
 }

@@ -1,5 +1,6 @@
 .subreddit-title {
     font-size: 1.5rem;
+    margin-left: 10px;
 }
 @media only screen and (min-width: 640px) {
     .subreddit-posts {
