@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Card } from '../Card/Card';
 import { fetchSubredditPosts } from '../../api/reddit';
-import { SubredditMenu } from '../SubredditMenu/SubredditMenu';
 import './Subreddit.css';
 
 export function Subreddit() {
@@ -25,7 +24,6 @@ export function Subreddit() {
     }, [subreddit, error]);
     return (
         error ? <p className='error'>Cannot load the posts. Try to check your internet connection or change the url and reload the page.</p> :
-        <div>
             <div className='subreddit-posts'>
                 <h1 className='subreddit-title'>{showSubreddit ? 'Popular posts' : subreddit}</h1>
                 {isLoading ? <span className='loading'>Loading...</span> :
@@ -33,7 +31,5 @@ export function Subreddit() {
                         return <Card key={post.id} post={post} showSubreddit={showSubreddit}/>
                     })}
             </div>
-            <SubredditMenu />
-        </div>
     );
 }

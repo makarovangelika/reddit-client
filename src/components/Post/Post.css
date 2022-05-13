@@ -12,8 +12,7 @@
         padding: 0 15px;
     }
     .post-card {
-        max-width: 1000px;
-        margin: 0 auto;
+        width: 70%;
     }
     .post-card {
         border-radius: 5px;

@@ -11,3 +11,9 @@ export const fetchPost = async (postId) => {
     const json = await response.json();
     return json;
 }
+
+export const getSubreddits = async() => {
+    const response = await fetch(`${url}/subreddits.json`);
+    const json = await response.json();
+    return json.data.children.map(subreddit => subreddit.data);
+}
