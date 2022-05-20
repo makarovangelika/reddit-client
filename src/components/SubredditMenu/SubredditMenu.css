@@ -86,4 +86,7 @@ div.subreddit-icon {
     .toggler {
         display: none;
     }
+    .subreddit-menu.opened {
+        overflow-y: visible;
+    }
 }
