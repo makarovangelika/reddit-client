@@ -10,12 +10,12 @@ export function SearchResults() {
     let [isLoading, setIsLoading] = useState(true);
     let [error, setError] = useState(false);
     useEffect(() => {
-        getSearchResults(term).
-            then(response => {
+        getSearchResults(term)
+            .then(response => {
                 setResults(response);
                 setIsLoading(false);
-            }).
-            catch(() => setError(true))
+            })
+            .catch(() => setError(true))
     }, [term, error]);
     return (
         error ? <p className='error'>Cannot load the posts. Try to check your internet connection or change the url and reload the page.</p> :
