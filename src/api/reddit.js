@@ -11,8 +11,3 @@ export const fetchPost = async (postId) => {
     const json = await response.json();
     return json;
 }
-export const getSearchResults = async (term) => {
-    const response = await fetch(`${url}/search.json?q=${term}`);
-    const json = await response.json();
-    return json.data.children.map(post => post.data);
-}

@@ -1,12 +1,15 @@
 import './Header.css';
 import { Link, useNavigate, createSearchParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setTerm, clearTerm } from './SearchSlice';
 
 export function Header() {
-    let [term, setTerm] = useState('');
+    let term = useSelector(state => state.search.term);
+    let dispatch = useDispatch();
     let location = useLocation();
     let navigate = useNavigate();
-    let handleTermChange = e => setTerm(e.target.value);
+    let handleTermChange = e => dispatch(setTerm(e.target.value));
     let goToResults = (e) => {
         e.preventDefault();
         navigate({
@@ -18,7 +21,7 @@ export function Header() {
     }
     useEffect(() => {
         if (term && location.pathname !== '/search') {
-            setTerm('');
+            dispatch(clearTerm());
         }
     }, [location]);
     return (
