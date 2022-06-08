@@ -1,19 +1,24 @@
 import { useEffect, useState } from 'react';
-import { getSubreddits } from '../../api/reddit';
 import { NavLink } from 'react-router-dom';
 import './SubredditMenu.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchSubreddits } from './SubredditsSlice';
 
 export function SubredditMenu() {
-    let [subreddits, setSubreddits] = useState([]);
-    let [openedMenu, setOpenedMenu] = useState(false);
+    const subreddits = useSelector(state => state.subreddits.subreddits);
+    const isLoading = useSelector(state => state.subreddits.isLoading);
+    const error = useSelector(state => state.subreddits.error);
+    const dispatch = useDispatch();
+    const [openedMenu, setOpenedMenu] = useState(false);
     const toggleMenu = () => {
         setOpenedMenu(!openedMenu);
     }
     useEffect(() => {
-        getSubreddits()
-            .then(response => setSubreddits(response))
-    });
+        dispatch(fetchSubreddits());
+    }, [dispatch]);
+
     return (
+        isLoading || error ||
         <div className={`subreddit-menu ${openedMenu ? 'opened' : ''}`}>
             <div onClick={toggleMenu} className='toggler'>
                 <div className='open'>
