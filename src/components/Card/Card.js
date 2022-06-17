@@ -21,7 +21,7 @@ export function Card({ post, showSubreddit }) {
             {showSubreddit && <Link className='subreddit-link' to={`/${post.subreddit}`}>{post.subreddit}</Link>}
             <span className='post-time'>{moment.unix(post.created_utc).fromNow()}</span>
             <div className={thumbnailClass}>
-                    <Link to={`/${post.subreddit}/${post.id}`}>
+                    <Link data-testid={post.id} to={`/${post.subreddit}/${post.id}`}>
                         <h2 className='post-title'>{post.title}</h2>
                     </Link>
                     {post.is_self || content}

@@ -24,7 +24,7 @@ export function Subreddit() {
     }, [subreddit, error]);
     return (
         error ? <p className='error'>Cannot load the posts. Try to check your internet connection or change the url and reload the page.</p> :
-            <div className='subreddit-posts'>
+            <div data-testid='subreddit-posts' className='subreddit-posts'>
                 <h1 className='subreddit-title'>{showSubreddit ? 'Popular posts' : subreddit}</h1>
                 {isLoading ? <span className='loading'>Loading...</span> :
                     subredditPosts.map(post => {

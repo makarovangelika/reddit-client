@@ -32,7 +32,7 @@ export function Post() {
     return (
         error ? <p className='error'>Cannot load the post. Try to check your internet connection or change the url and reload the page.</p> :
             (isLoading ? <span className='loading'>Loading...</span> :
-                <div className='post-card'>
+                <div data-testid='post-card' className='post-card'>
                     <FullCard post={post} />
                     <div className='comments-list'>
                         {comments.map(comment => {

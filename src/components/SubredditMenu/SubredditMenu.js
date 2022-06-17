@@ -19,7 +19,7 @@ export function SubredditMenu() {
 
     return (
         isLoading || error ||
-        <div className={`subreddit-menu ${openedMenu ? 'opened' : ''}`}>
+        <div data-testid='subreddit-menu' className={`subreddit-menu ${openedMenu ? 'opened' : ''}`}>
             <div onClick={toggleMenu} className='toggler'>
                 <div className='open'>
                     <img src='/burger-menu.svg' alt='hamburger menu icon' />
@@ -34,7 +34,7 @@ export function SubredditMenu() {
                         {subreddit.icon_img ?
                             <img className='subreddit-icon' src={subreddit.icon_img} alt='icon of the subreddit' /> :
                             <div className='subreddit-icon'></div>}
-                        <span>{subreddit.display_name}</span>
+                        <span data-testid='subreddit-name'>{subreddit.display_name}</span>
                     </NavLink>
                 })}
             </nav>
