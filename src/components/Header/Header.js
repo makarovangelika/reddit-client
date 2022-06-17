@@ -20,7 +20,7 @@ export function Header() {
         });
     }
     useEffect(() => {
-        if (term && location.pathname !== '/search') {
+        if (location.pathname !== '/search') {
             dispatch(clearTerm());
         }
     }, [location, dispatch]);

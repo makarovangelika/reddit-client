@@ -17,10 +17,10 @@ export function Post() {
         fetchPost(postId)
             .then(response => {
                 setPost(response[0].data.children[0].data);
-                setComments(response[1].data.children.map(comment => {
-                    if (comment.kind !== 'more') {
-                        return comment.data;
-                    }
+                setComments(response[1].data.children.filter(comment => {
+                    return comment.kind !== 'more';
+                }).map(comment => {
+                    return comment.data;
                 }));
                 setIsLoading(false);
             })
@@ -36,7 +36,6 @@ export function Post() {
                     <FullCard post={post} />
                     <div className='comments-list'>
                         {comments.map(comment => {
-                            if (comment)
                             return <Comment key={comment.id} comment={comment} />
                         })}
                     </div>

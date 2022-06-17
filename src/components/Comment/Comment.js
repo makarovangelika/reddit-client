@@ -9,11 +9,12 @@ export function Comment({ comment }) {
             <span>{moment.unix(comment.created).fromNow()}</span>
             <MarkdownText body={comment.body} />
             {comment.replies &&
-                comment.replies.data.children.map(reply => {
-                    if (reply.kind !== 'more') {
-                        return <Comment key={reply.data.id} comment={reply.data} />
-                    }
-                })}
+                comment.replies.data.children.filter(reply => {
+                    return reply.kind !== 'more';
+                }).map(reply => {
+                    return <Comment key={reply.data.id} comment={reply.data} />
+                })
+            }
         </div>
     )
 }
