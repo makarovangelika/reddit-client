@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export function SearchResults() {
     let results = useSelector(state => state.search.results);
-    let [searchParams, setSearchParams] = useSearchParams();
+    let [searchParams] = useSearchParams();
     let term = searchParams.get('q');
     let isLoading = useSelector(state => state.search.isLoading);
     let error = useSelector(state => state.search.error);

@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, createSearchParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Subreddit } from './components/Subreddit/Subreddit';
 import { Post } from './components/Post/Post';
 import { Header } from './components/Header/Header';

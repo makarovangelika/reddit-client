@@ -10,8 +10,8 @@ export function Card({ post, showSubreddit }) {
         </div>
     } else {
         content = post.thumbnail && post.thumbnail !== 'default' ?
-        <a href={post.url} target='_blank'><img src={post.thumbnail} alt='media preview' /></a> :
-        <a className='post-link' href={post.url} target='_blank'>{post.url}</a>
+        <a href={post.url} target='_blank' rel='noreferrer' ><img src={post.thumbnail} alt='media preview' /></a> :
+        <a className='post-link' href={post.url} target='_blank' rel='noreferrer' >{post.url}</a>
     }
     let thumbnailClass = post.post_hint !== 'image' && post.thumbnail && post.thumbnail !== 'default' ?
         'thumbnail-post' :

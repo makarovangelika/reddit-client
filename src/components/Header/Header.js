@@ -23,7 +23,7 @@ export function Header() {
         if (term && location.pathname !== '/search') {
             dispatch(clearTerm());
         }
-    }, [location]);
+    }, [location, dispatch]);
     return (
         <header>
             <div className='header-bar'>
