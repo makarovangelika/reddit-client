@@ -1,8 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+# Reddit client
+This React web application uses the Reddit API to allow users to view and search posts and comments provided by the API.\
+This project was built to practice working with **React**, **React router** and **Redux**.
+## Usage
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
+This project was deployed using Netlify [here](https://client-reddit.netlify.app/).
 
 In the project directory, you can run:
 
@@ -16,55 +17,37 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
+## Features
+The starting page shows the popular posts of Reddit. There are also the search bar at the top and the menu with popular subreddits on the right.
 
-### `npm run build`
+![The starting page of the project](public/reddit-screenshot.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the users click on the link of the subreddit in the post or in the menu they can see the list of subreddit's posts.\
+When the users click on the post in the list they are navigated to the separate route for an individual post. On this page they can see the post and the comments which are displayed with nested replies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![The page with the post](public/post-screenshot.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When the users click on the icon with the number of comments in the list of the posts they are navigated to the section with the comments to the corresponding post.
 
-### `npm run eject`
+![Comments to the post](public/comments-screenshot.png)
+## Technologies
+During the development of this project these technologies were used:
+* React 18.0.0
+* Redux 4.1.2\
+Though using Redux is unnecessary in the projects like this, some slices of the state were managed with the help of this library for practice.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* React-redux 8.0.2
+* Redux toolkit 1.8.2
+* Marked-React 1.1.0\
+The library was used for converting some of the comments in Markdown into html.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Moment 2.29.3\
+The library was used for displaying the relative time of the post's and the comment's creation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* React Router 6.3.0
+* Testing libraries:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  * Jest-Dom 5.16.4
+  * React testing library 13.1.1
+  * User-Event testing library 14.2.1
