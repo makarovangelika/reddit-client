@@ -1,6 +1,7 @@
 # Reddit client
 This React web application uses the Reddit API to allow users to view and search posts and comments provided by the API.\
 This project was built to practice working with **React**, **React router** and **Redux**.
+This project was also built using **Angular** [here](https://github.com/makarovangelika/reddit-client-angular).
 ## Usage
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 This project was deployed using Netlify [here](https://client-reddit.netlify.app/).
